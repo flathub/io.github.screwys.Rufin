@@ -20,8 +20,8 @@
     "--socket=wayland",
     "--socket=pulseaudio",
     "--device=dri",
-    "--filesystem=xdg-music",
-    "--filesystem=xdg-run/app/com.discordapp.Discord:create"
+    "--filesystem=xdg-music:ro",
+    "--filesystem=xdg-run/app/com.discordapp.Discord/discord-ipc-0"
   ],
   "modules": [
     {
@@ -37,14 +37,15 @@
         "install -Dm644 data/io.github.screwys.Rufin.metainfo.xml /app/share/metainfo/io.github.screwys.Rufin.metainfo.xml",
         "install -Dm644 data/icons/hicolor/scalable/apps/io.github.screwys.Rufin.svg /app/share/icons/hicolor/scalable/apps/io.github.screwys.Rufin.svg",
         "install -Dm644 -t /app/share/icons/hicolor/scalable/status data/icons/hicolor/scalable/status/*.svg",
+        "install -Dm644 -t /app/share/icons/hicolor/512x512/apps data/icons/hicolor/512x512/apps/*.png",
         "install -Dm644 -t /app/share/icons/hicolor/64x64/apps data/icons/hicolor/64x64/apps/*.png"
       ],
       "sources": [
         {
           "type": "git",
           "url": "https://github.com/screwys/Rufin.git",
-          "tag": "v0.3.9",
-          "commit": "fff3a5df484ad72176b7d7080273f7a7f2e67a69"
+          "tag": "v0.3.10",
+          "commit": "d0e51e811ad4afe40ae93ddff086d914a1182b63"
         },
         "cargo-sources.json"
       ]
