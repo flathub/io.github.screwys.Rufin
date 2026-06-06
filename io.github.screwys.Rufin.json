@@ -50,14 +50,14 @@
         "test -f /app/share/icons/hicolor/64x64/apps/io.github.screwys.Rufin.provider.navidrome.png",
         "test -f /app/share/icons/hicolor/64x64/apps/io.github.screwys.Rufin.provider.opensubsonic.png",
         "gtk4-update-icon-cache -f -t /app/share/icons/hicolor || true",
-        "for po_file in po/*.po; do if [ -f \"$po_file\" ]; then lang=\"$(basename \"$po_file\" .po)\"; mkdir -p \"/app/share/locale/$lang/LC_MESSAGES\"; msgfmt \"$po_file\" -o \"/app/share/locale/$lang/LC_MESSAGES/rufin.mo\"; fi; done"
+        "for po_file in locales/*.po; do if [ -f \"$po_file\" ]; then lang=\"$(basename \"$po_file\" .po)\"; mkdir -p \"/app/share/locale/$lang/LC_MESSAGES\"; msgfmt \"$po_file\" -o \"/app/share/locale/$lang/LC_MESSAGES/rufin.mo\"; fi; done"
       ],
       "sources": [
         {
           "type": "git",
           "url": "https://github.com/screwys/Rufin.git",
-          "tag": "v0.6.0",
-          "commit": "f585079b476ada2a27cce16dd361c9837c09b180",
+          "tag": "v0.6.1",
+          "commit": "a085f6885e9e3c711b7a152a1c000c63bb13fe77",
           "x-checker-data": {
             "type": "json",
             "url": "https://api.github.com/repos/screwys/Rufin/releases/latest",
