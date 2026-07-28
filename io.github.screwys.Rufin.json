@@ -11,7 +11,8 @@
   "build-options": {
     "append-path": "/usr/lib/sdk/rust-stable/bin",
     "env": {
-      "CARGO_NET_OFFLINE": "true"
+      "CARGO_NET_OFFLINE": "true",
+      "LINDERA_DICTIONARIES_PATH": "/run/build/rufin/lindera-dictionaries"
     }
   },
   "finish-args": [
@@ -69,10 +70,14 @@
         "test -f /app/share/icons/hicolor/scalable/actions/rufin-route-genres-selected-symbolic.svg",
         "test -f /app/share/icons/hicolor/scalable/actions/rufin-route-home-symbolic.svg",
         "test -f /app/share/icons/hicolor/scalable/actions/rufin-route-home-selected-symbolic.svg",
+        "test -f /app/share/icons/hicolor/scalable/actions/rufin-route-history-symbolic.svg",
+        "test -f /app/share/icons/hicolor/scalable/actions/rufin-route-history-selected-symbolic.svg",
         "test -f /app/share/icons/hicolor/scalable/actions/rufin-route-moods-symbolic.svg",
         "test -f /app/share/icons/hicolor/scalable/actions/rufin-route-moods-selected-symbolic.svg",
         "test -f /app/share/icons/hicolor/scalable/actions/rufin-route-playlists-symbolic.svg",
         "test -f /app/share/icons/hicolor/scalable/actions/rufin-route-playlists-selected-symbolic.svg",
+        "test -f /app/share/icons/hicolor/scalable/actions/rufin-route-search-symbolic.svg",
+        "test -f /app/share/icons/hicolor/scalable/actions/rufin-route-search-selected-symbolic.svg",
         "test -f /app/share/icons/hicolor/scalable/actions/rufin-route-smart-playlists-symbolic.svg",
         "test -f /app/share/icons/hicolor/scalable/actions/rufin-route-smart-playlists-selected-symbolic.svg",
         "test -f /app/share/icons/hicolor/scalable/actions/rufin-route-tracks-symbolic.svg",
@@ -97,8 +102,8 @@
         {
           "type": "git",
           "url": "https://github.com/screwys/Rufin.git",
-          "tag": "v0.9.0",
-          "commit": "57c96db72bcb5f74f7818d8dc9326c534280527f"
+          "tag": "v0.10.0",
+          "commit": "49cf72f8424913f6208cbc64b7d388c2e083c6fa"
         },
         "cargo-sources.json"
       ]
