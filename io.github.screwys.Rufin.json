@@ -95,16 +95,17 @@
       "build-commands": [
         "install -Dm644 cargo/config .cargo/config.toml",
         "cargo fetch --locked --offline --manifest-path Cargo.toml --verbose",
-        "cargo build --release --locked --offline -p rufin -p xtask",
-        "target/release/xtask install linux --binary target/release/rufin --destdir / --prefix /app",
-        "gtk4-update-icon-cache -f -t /app/share/icons/hicolor || true"
+        "cmake -S . -B build-cmake -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/app -DRUFIN_BUILD_IDENTITY=stable -DRUFIN_CARGO_FROZEN=ON",
+        "cmake --build build-cmake --target rufin",
+        "cmake --install build-cmake",
+        "gtk4-update-icon-cache -f -t /app/share/icons/hicolor"
       ],
       "sources": [
         {
           "type": "git",
           "url": "https://github.com/screwys/Rufin.git",
-          "tag": "v0.14.0",
-          "commit": "4356a25d03428a1c8c91561b5ddff3d00635310e"
+          "tag": "v0.15.0",
+          "commit": "e99c473e192e35fa7139ed3a72493a9f2f9f90cb"
         },
         "cargo-sources.json"
       ]
