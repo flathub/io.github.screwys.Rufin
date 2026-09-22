@@ -107,6 +107,11 @@
           "tag": "v0.16.0",
           "commit": "54e23c58f5f48132fe1d1666ea0fdf91ea031a53"
         },
+        {
+          "type": "patch",
+          "path": "flathub-source-icons.patch",
+          "use-git": true
+        },
         "cargo-sources.json"
       ]
     }

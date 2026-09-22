@@ -1,0 +1,180 @@
+diff --git a/crates/ui-shared/resources/rufin.gresource.xml b/crates/ui-shared/resources/rufin.gresource.xml
+index 5566201e..3f8d0b24 100644
+--- a/crates/ui-shared/resources/rufin.gresource.xml
++++ b/crates/ui-shared/resources/rufin.gresource.xml
+@@ -5,8 +5,8 @@
+     <file>hicolor/64x64/apps/io.github.screwys.Rufin.external.lastfm.png</file>
+     <file>hicolor/64x64/apps/io.github.screwys.Rufin.external.musicbrainz.png</file>
+     <file>hicolor/64x64/apps/io.github.screwys.Rufin.source.jellyfin.png</file>
+-    <file>hicolor/64x64/apps/io.github.screwys.Rufin.source.plex.svg</file>
+-    <file>hicolor/64x64/apps/io.github.screwys.Rufin.source.emby.svg</file>
++    <file>hicolor/64x64/apps/io.github.screwys.Rufin.source.plex.png</file>
++    <file>hicolor/64x64/apps/io.github.screwys.Rufin.source.emby.png</file>
+     <file>hicolor/64x64/apps/io.github.screwys.Rufin.source.navidrome.png</file>
+     <file>hicolor/64x64/apps/io.github.screwys.Rufin.source.opensubsonic.png</file>
+     <file>hicolor/64x64/apps/io.github.screwys.Rufin.source.webdav.png</file>
+diff --git a/crates/ui-shared/src/ui_resource.rs b/crates/ui-shared/src/ui_resource.rs
+index b6cc7508..a977c3d9 100644
+--- a/crates/ui-shared/src/ui_resource.rs
++++ b/crates/ui-shared/src/ui_resource.rs
+@@ -139,8 +139,8 @@ pub fn verify_icons() -> Result<(), String> {
+         "scalable/apps/io.github.screwys.Rufin.svg",
+         "64x64/apps/io.github.screwys.Rufin.source.webdav.png",
+         "64x64/apps/io.github.screwys.Rufin.source.smb.png",
+-        "64x64/apps/io.github.screwys.Rufin.source.plex.svg",
+-        "64x64/apps/io.github.screwys.Rufin.source.emby.svg",
++        "64x64/apps/io.github.screwys.Rufin.source.plex.png",
++        "64x64/apps/io.github.screwys.Rufin.source.emby.png",
+         "scalable/actions/rufin-go-last-symbolic.svg",
+         "scalable/actions/rufin-activity-overview-symbolic.svg",
+         "scalable/actions/rufin-audio-only-symbolic.svg",
+diff --git a/resources/icons/hicolor/64x64/apps/io.github.screwys.Rufin.source.emby.svg b/resources/icons/hicolor/64x64/apps/io.github.screwys.Rufin.source.emby.svg
+deleted file mode 100644
+index 05435150..00000000
+--- a/resources/icons/hicolor/64x64/apps/io.github.screwys.Rufin.source.emby.svg
++++ /dev/null
+@@ -1,3 +0,0 @@
+-<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24">
+-  <path fill="#52b54b" d="M11.041 0c-.007 0-1.456 1.43-3.219 3.176L4.615 6.352l.512.513.512.512-2.819 2.791L0 12.961l1.83 1.848c1.006 1.016 2.438 2.46 3.182 3.209l1.351 1.359.508-.496c.28-.273.515-.498.524-.498.008 0 1.266 1.264 2.794 2.808L12.97 24l.187-.182c.23-.225 5.007-4.95 5.717-5.656l.52-.516-.502-.513c-.276-.282-.5-.52-.496-.53.003-.009 1.264-1.26 2.802-2.783 1.538-1.522 2.8-2.776 2.803-2.785.005-.012-3.617-3.684-6.107-6.193L17.65 4.6l-.505.505c-.279.278-.517.501-.53.497-.013-.005-1.27-1.267-2.793-2.805A449.655 449.655 0 0011.041 0zM9.223 7.367c.091.038 7.951 4.608 7.957 4.627.003.013-1.781 1.056-3.965 2.32a999.898 999.898 0 01-3.996 2.307c-.019.006-.026-1.266-.026-4.629 0-3.7.007-4.634.03-4.625Z"/>
+-</svg>
+diff --git a/resources/icons/hicolor/64x64/apps/io.github.screwys.Rufin.source.plex.svg b/resources/icons/hicolor/64x64/apps/io.github.screwys.Rufin.source.plex.svg
+deleted file mode 100644
+index ae11a6a9..00000000
+--- a/resources/icons/hicolor/64x64/apps/io.github.screwys.Rufin.source.plex.svg
++++ /dev/null
+@@ -1,4 +0,0 @@
+-<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+-  <rect width="64" height="64" rx="14" fill="#282828"/>
+-  <path d="M20 12h13l15 20-15 20H20l15-20z" fill="#e5a00d"/>
+-</svg>
+diff --git a/resources/icons/hicolor/64x64/apps/io.github.screwys.Rufin.source.plex.png b/resources/icons/hicolor/64x64/apps/io.github.screwys.Rufin.source.plex.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..e3e325c777adc6180a71d23712472e7f23e3c4c9
+GIT binary patch
+literal 1840
+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
+
+literal 0
+HcmV?d00001
+
+diff --git a/resources/icons/hicolor/64x64/apps/io.github.screwys.Rufin.source.emby.png b/resources/icons/hicolor/64x64/apps/io.github.screwys.Rufin.source.emby.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..d054f3c3e7f35ecc6c3fb0d0ca695469c1d7c63d
+GIT binary patch
+literal 4011
+zcmZ{nXE5B4qK1DFeMJbCXwe11>a5NpdX4D4gv4sAC4yL;XdAuvh_Z+hy#+y(VC`Rz
+z-pT60CU?%cGxyH<aNe2c<1^3aH`YK;;~qI9IRF6nG@rtZ002<>7gWRm09^mB$pZj@
+z&GD&`E&#md0f4Xw0JsJKAZ!N!{2&0ZX9ob#OaP$w%55{00|0>7L0ba`{CmGu+d}~W
+zAoF@^?h62b-M{(uQe^@F01||zt{TZ68JO-KL$`Y91polt2sJZ=lRd&2>geNak8lP=
+zA)=Ck5E(&H5fc$fsE9aJR7?N@fkGfw(zm4lA$WK?xw!=WcR|n@)(8N=<Nqrl+&r9p
+z5%wNl|L=&Jh>Ac(#Gs<${~Pi9fjtBON`Fn5vPt0lVcttK<L9$Oe{TqtzY4_7E=WU*
+zr8(Bv)YM?f$;mVy!YXTwYvzaQyJ~8n%|;b0HPf$q>)kQX*({u7lRK-Bie4XggjN+N
+zU5BY*VN+9$spT;N|Hi>3a_;--&z$G)a&segk4v~*(VbYum$u^;mW630*qo$K8kDTn
+z0+N-#6V=pc?z1q6;SA6=J`0;dUOr50bbR(Q_VW#eY?hYZ6>Bxc91Z#7sxwzO^6{z`
+z!5(+K8tHv@AEuwL5UNC>V@>R;Pi3ZtUz!S}8X%eU<uO;jXMP7gZKvBJ28OnOopp3v
+z!k}WpzfYW74+A7>cnEfUe5&U&SNn(kO_D#ZIcOxhCQD?#BSMmtjBIVvS(%jH@I9{>
+z*_ksw3i-mAM6dLKu+t^<#pB)H$VmY($h3$M-|qKj>R60D`EmV-wrA6y7P4MPqU44F
+zlPrkWS5mk_Yr?8-z%A!(dTluLaSWL<n*J;spUC<2W$*ed&{p8n*XZ1R!$P*Twu1{N
+zfH^RW;_-RQljf;$i@w{m{V%BSTs(tzKkt>hhTIw+{gGu#iUo$r%10vJm8hqX!hueB
+zlh#&Xlsv~jvyL3C*#&594nGYsG2u6P%JIQNP9?3h`lw45G4&2*QOM{k9)TZ3D~N*~
+zAJw?JlrEpWnY-~<G}yO&gpOtoSt1A91)Hn|>1)l@Y(ZUaulih5QW|9QsgXfW#!q7c
+znCaPU1fR^LZ$`L{TGVZM(JTrPK!!>LBzz~b$D|V-BK&vQTC9^G$xptfpm-nY)Hm_|
+z_V&(aq+aA9*lEk8e>pms==Www?9<K-gGBI`ON9YzM$h^{cUZDDFdPmsId#^dpo~3y
+zVGpleknIxDA<g^J{bPxUNOLnwS##669eN#T6f{0GUs<BTOTu*bH+h~O{M4By44%R#
+z!Y(Tb-n^pEauiQ(fjl6=-)^ubyPOi&7K@610O3qA7%=V5dFx8$^{s10ANcczkcL~v
+zqLl^g_3HN9n+<UIC>9v5c(0zH6yG1esEv5;FL^y#<J5*mTis=QC_k*YQ|mai!|e^u
+z>T;)B=5&r(?!r?S*{U+fJ(BAY$&SLFT_?!Sw?qbf{%q}BK1v8_MOPYGf*%QAz!I+Z
+ztE)}-ueLZ)R9y5*Cw?Vy6VEDlSf*%N8XCS4?9^9zSXM5an>l#j&pTeBZ%;uOmP|X#
+zSIs&8>70A=%r_N%2NpV&vfSkpS<U%Oys^z<??R4MV1BJU>3&NjeA{MZWD4)p@m+D?
+z)JTH26=>*T(wWGWW)I;kPmScKTYjhLwH`Hd_*%}|zE|4Qv(I<+ETMO@&fiB=Xo1Md
+z*{vzuz%&Z^1@<;IHTS|!F;nE`#CgU6=xUm?!aU08oz)5|m4dTMPu6+(KM<nn=|`se
+zA5OAX41X%q&b#=z%*FIvRBTrbHihhuTJ>!JyPlp{VT3ch88RkYt!0}%{L`tp=zAJj
+zf3uIELPC~>eMokA)j1oe6N&2U$6qU$Yh<KsesIZOMd!4oXSiBn%pyVV5`5gqr@y|&
+zA_RkSj@rGH_d?nd)KxMQm_H3%;l|$PIuY0<cE9|1yvgD$?f~c&F9sFGE4xyIFfk76
+zq59n)$;4~NhjFjh;h$E%7pd;bX}y~<G5I-hme(Fow%0OR2kP}tx73?X7~IfRY2yi6
+z{8FwkxJxj(AOF#2rR(kaU|X-pIEY|$FwLEL2VtR+mP8(A50N`f=ryp+d02uW@7u$~
+zv7brqGSEhlH}<wIwWko=vCt}O(0Bi*_rZH5!QCtr$_Hjv6ePy6rrCWgerM;Lh{)SJ
+z4?1UX>M#}+PH-?l(I5u3IJt8bCd4j~zxa+A*=)pc)_?z@?Fp{0aCdsxb28e7S)MU|
+zc=Y4d8mRIx?G^I@dUV%>nYTVDNYgUmUGTuPzT(jvK``JOjE}w_9PDs%Vy8;(lEk?A
+zDRH`T!x*~kO&G|$TXMx+p2p41PHh`ZV<YogJWn%Da||TR2ITxY!c^7nMNg9sP*fk!
+z#9FGV;5<S?d~8p%VSa&MN|K~*xFBR%;$(TUzT67<eS*`Ix@`Dh;gG=i?hHp(IodkM
+ze(N}AUdUpjdPwr@xN#yKsvtp!o}@SIu)DKR(B4rn#vSv$I7`Yil@w8KE0DH}65k$E
+zE-O2j&`ksm1nC3j+shMM%$$7X96_2~ZsP_0p9?w7zXXXnW^RQNvP(Ssk!MBwCV}A{
+z%8Ajg{@d(IxliIB)DASDT#b~COG?T)Hb{RhEt%?Kn->gBFuj*sDT^PQkW{M|mZI0j
+z@lk<!0{(iD)IU!71AMcaB+RZF&mX(e^0lV=pw&DU0p`UWJhvT|r%2l5c#C>+FrNme
+ztr~a_9xYAM4IvANzW1gYFe{IrAfCGW&Qt)tuJ07NE;E2J5VIMAV$o}JlAqVB{XI?f
+zL6n1}37qulPrPqD${%!k$+3m)$3L#cl01^81+<Yan#oUAmEku`s)I2r?8U$1d(s>3
+zifkA!wrAiZS9$~eH%G2(&J}DfN$!{5#NN5u;k*_WO@gOSbZOLKW$j3}ExR4}W;6(U
+zm_04^le|trAalv;MSoeR2QqpDORiy`IeA&e6FU%m)7qa^skXkal21l0$H(-@ok(Tl
+zk3&aYGM8{?VsN`ocFA<Qeo0cLmdA>)poTY>#6uHE#qa%5!}5hm$Z@XyUAZ;?xiJcF
+zngpBa+uLNF{bXU)k%h-+$j~5}Dlc~{qQe1Z{dp|QWk_Wm)oC*5?@zl{k|Rxa%{9Fa
+zEz&>ayPqPm!)!b$HUwT@Hm9M+dPdSRm9epr6N*WcnHrL<1|PrUG;ox<3Ge+(=C{<I
+z`0*Ssy}5J<bCt<gzVG|iuune032C*`Wz!wnZF9VD`Pcr&LjnXAY&a}+%go9q&%u}J
+zLb<fJt`zOh$!QMG$vwH!$^Pnh5>$|G2rVe&$+oO^wnZyHs3QhhDH4_5j+j(h=VqD}
+z%!WKWzYuf%#teOQENHv@t9cw#S|m%LpZmhSh};#z6|tS3uc*IAcUM}u@~n~5z(T8k
+zcsq9k-DI3U`c~2VVzQ`>xu|99O?+fxDc#xV!K)LEYkJYL(9k(zHj>|0qqud4C8V3j
+zmUyR1rTxz-MML55bN*Wte01msB2Y&27tumTwv@UK-`uY?wlx5M+T7szGxiCzg_`i3
+z4fv8(R=s(hQ`EJOu=Qpv1h-a6666t_Hd4*r=4-B6YyEQ1k@fdxX$E)t!~XF+&dNn+
+zc#T%13G8S1&1}byY4KDW&mh7;=?nqd`@YA2ev#B7FIV=LKYi>mn!j(>@sG#yoem^U
+z$$Sov-JvrX9F)Z3D5CFXbaB|b>m?aie60}45HjY+2{fd3t=vYHhQm_nU`w~8g~r+Z
+zH2ozd9s>Al?3s|@fRRdAjpbZy)*{|<QvQlk_(S@#ewkXB5g(~V4O^pJ>qUKcZdCR1
+zc_Xjh;6Q60l@0hb<$8l4Fz^SgKw-F7MZvcIC4H7MHuiH|+~RpD>KQ|juJNyP&@+Bl
+znS9*WqG^xFI@DEh5017c)eyyQAeb)LFYz@wHIAG@g$1mW6NUH%X<JoJm7fu)^<jF|
+zpQeRWUXnV#*~jKB>3~k|ur7}eoc91e?R5qx0+!4_kiiKyOj0hdejHFYcV6==@hQdV
+z@si3Z28p(6NK=@7ChjV{YO__$SiqY6!+gA9a2x{`C|H_R%lOglTM3S@ic})BV&|3g
+zZ04Rk5=Y$lA1TO0OG&;86OLjN6rFnJ-^g&&9zH)8SU_o7HTEo9$rp3DU?jEQI634q
+zX~zFRTQ@cM=fO4@!6KvIj@VbvuV5M;ohkrHGp!*(XISI%($Kzchxv}s?$LR_i@WBg
+z{MvemEGoG?k)6mK35gf+Xt$(@h=k`?w8rY*^)q8y%~$r=wjY~~5yqRF!y&_{Xr&c3
+zzT&E?Si0V`7<JAjDlSmkLl@n`*1d1kwIJO=MVbc?f_1O8ah75A+BBtV(m_pOVQ6F`
+zdvsYhzs5<c=-a~PJcBn^klGYN?_*&VuNb@y0F6vkw%5{f32UzSRl@dksd^Nw{cvBR
+zAg6?qg=4~ysJ04|7}2A`CLiX&nD!w8EyAoC7iZ;MF<QSup)&Q9bhiZCK7yl|qf|12
+zGuUoV7Z<;vt)DVOkx4Kp!T)*1RdDnb_C89D($wAbZ^itw1ida#LoQsk<>TYl1AoR9
+zlnmmzhoH|u(Z)x;j8*g)%}g!YJsnS&kT)>xWXKs}Wtk)K+>(#tbt5dEtXHyx=gaHL
+zxr9)*_fJ@5P2o2=2}?MH&{%}~RO$Du;4hVpg-SxcPV`E~ZdQIz{BV`ib_;TJ_&a&L
+zx+4tb81nF2A|BQNyM`OB+sg1&4Ce6MCWAG&9J6MAP$<kS_qfHHvR*d-&(l9og!FU}
+z^h08DLImPbY7u+Nes0UQnL4Cl_sn(Cr~v2zy&~bnbd7}v@kD_LQTvL+>^f187d^W;
+z^M+MV$R|x5#PcCBIXJl&VGg6aFlr^HiiW003EIpevnG1?V8P;qnvY7O%H-%MP`!#8
+zKz6Db_uRDJOk>>J=vW}-rLYEKeLIq^l{RiY@Mq0Nt$}gb4c2JhGK|ih#1~&$oeY;=
+z6?mSW=9!Me1LTNNbZb^k*(`5ImsZNB_BfOrDTvFa99sRfaahTPqs#at4UG<s3}*TH
+z1Cn_b{R=z7rcWmMdx7dzNx*yi-Q|t^%h@(O5s?%BwZrzelq7sHzWiQ2`k$2G5+fOC
+z-HG_0eZror2|CC{jvljhpnZUxKT0hw7KeMd!rhUNS_mgyb7{Qh>!Cg%XGniD)Zoda
+zVAnmJxl}Vf&-@qk-tLlvE1G=eG``yOB9wa6BV*=PxPASsgrkdb<X=ZxQ%w(6t6~@a
+EKRzm*QUCw|
+
+literal 0
+HcmV?d00001
+
