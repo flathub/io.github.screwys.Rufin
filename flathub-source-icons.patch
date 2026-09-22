@@ -1,3 +1,36 @@
+diff --git a/crates/rufin-core/src/api/web.rs b/crates/rufin-core/src/api/web.rs
+index bf699a80..aba9bd58 100644
+--- a/crates/rufin-core/src/api/web.rs
++++ b/crates/rufin-core/src/api/web.rs
+@@ -475,26 +475,14 @@ async fn source_icon(
+             )
+         };
+     }
+-    macro_rules! svg {
+-        ($name:literal) => {
+-            asset(
+-                "image/svg+xml",
+-                include_bytes!(concat!(
+-                    "../../../../resources/icons/hicolor/64x64/apps/io.github.screwys.Rufin.source.",
+-                    $name,
+-                    ".svg"
+-                )),
+-            )
+-        };
+-    }
+     Ok(match kind.as_str() {
+         "jellyfin" => png!("jellyfin"),
+         "navidrome" => png!("navidrome"),
+         "subsonic" => png!("opensubsonic"),
+         "webdav" => png!("webdav"),
+         "smb" => png!("smb"),
+-        "plex" => svg!("plex"),
+-        "emby" => svg!("emby"),
++        "plex" => png!("plex"),
++        "emby" => png!("emby"),
+         _ => return Err(error(StatusCode::NOT_FOUND, "Source icon not found")),
+     })
+ }
 diff --git a/crates/ui-shared/resources/rufin.gresource.xml b/crates/ui-shared/resources/rufin.gresource.xml
 index 5566201e..3f8d0b24 100644
 --- a/crates/ui-shared/resources/rufin.gresource.xml
@@ -28,69 +61,6 @@ index b6cc7508..a977c3d9 100644
          "scalable/actions/rufin-go-last-symbolic.svg",
          "scalable/actions/rufin-activity-overview-symbolic.svg",
          "scalable/actions/rufin-audio-only-symbolic.svg",
-diff --git a/resources/icons/hicolor/64x64/apps/io.github.screwys.Rufin.source.emby.svg b/resources/icons/hicolor/64x64/apps/io.github.screwys.Rufin.source.emby.svg
-deleted file mode 100644
-index 05435150..00000000
---- a/resources/icons/hicolor/64x64/apps/io.github.screwys.Rufin.source.emby.svg
-+++ /dev/null
-@@ -1,3 +0,0 @@
--<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24">
--  <path fill="#52b54b" d="M11.041 0c-.007 0-1.456 1.43-3.219 3.176L4.615 6.352l.512.513.512.512-2.819 2.791L0 12.961l1.83 1.848c1.006 1.016 2.438 2.46 3.182 3.209l1.351 1.359.508-.496c.28-.273.515-.498.524-.498.008 0 1.266 1.264 2.794 2.808L12.97 24l.187-.182c.23-.225 5.007-4.95 5.717-5.656l.52-.516-.502-.513c-.276-.282-.5-.52-.496-.53.003-.009 1.264-1.26 2.802-2.783 1.538-1.522 2.8-2.776 2.803-2.785.005-.012-3.617-3.684-6.107-6.193L17.65 4.6l-.505.505c-.279.278-.517.501-.53.497-.013-.005-1.27-1.267-2.793-2.805A449.655 449.655 0 0011.041 0zM9.223 7.367c.091.038 7.951 4.608 7.957 4.627.003.013-1.781 1.056-3.965 2.32a999.898 999.898 0 01-3.996 2.307c-.019.006-.026-1.266-.026-4.629 0-3.7.007-4.634.03-4.625Z"/>
--</svg>
-diff --git a/resources/icons/hicolor/64x64/apps/io.github.screwys.Rufin.source.plex.svg b/resources/icons/hicolor/64x64/apps/io.github.screwys.Rufin.source.plex.svg
-deleted file mode 100644
-index ae11a6a9..00000000
---- a/resources/icons/hicolor/64x64/apps/io.github.screwys.Rufin.source.plex.svg
-+++ /dev/null
-@@ -1,4 +0,0 @@
--<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
--  <rect width="64" height="64" rx="14" fill="#282828"/>
--  <path d="M20 12h13l15 20-15 20H20l15-20z" fill="#e5a00d"/>
--</svg>
-diff --git a/resources/icons/hicolor/64x64/apps/io.github.screwys.Rufin.source.plex.png b/resources/icons/hicolor/64x64/apps/io.github.screwys.Rufin.source.plex.png
-new file mode 100644
-index 0000000000000000000000000000000000000000..e3e325c777adc6180a71d23712472e7f23e3c4c9
-GIT binary patch
-literal 1840
-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
-
-literal 0
-HcmV?d00001
-
 diff --git a/resources/icons/hicolor/64x64/apps/io.github.screwys.Rufin.source.emby.png b/resources/icons/hicolor/64x64/apps/io.github.screwys.Rufin.source.emby.png
 new file mode 100644
 index 0000000000000000000000000000000000000000..d054f3c3e7f35ecc6c3fb0d0ca695469c1d7c63d
@@ -178,3 +148,66 @@ EKRzm*QUCw|
 literal 0
 HcmV?d00001
 
+diff --git a/resources/icons/hicolor/64x64/apps/io.github.screwys.Rufin.source.emby.svg b/resources/icons/hicolor/64x64/apps/io.github.screwys.Rufin.source.emby.svg
+deleted file mode 100644
+index 05435150..00000000
+--- a/resources/icons/hicolor/64x64/apps/io.github.screwys.Rufin.source.emby.svg
++++ /dev/null
+@@ -1,3 +0,0 @@
+-<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24">
+-  <path fill="#52b54b" d="M11.041 0c-.007 0-1.456 1.43-3.219 3.176L4.615 6.352l.512.513.512.512-2.819 2.791L0 12.961l1.83 1.848c1.006 1.016 2.438 2.46 3.182 3.209l1.351 1.359.508-.496c.28-.273.515-.498.524-.498.008 0 1.266 1.264 2.794 2.808L12.97 24l.187-.182c.23-.225 5.007-4.95 5.717-5.656l.52-.516-.502-.513c-.276-.282-.5-.52-.496-.53.003-.009 1.264-1.26 2.802-2.783 1.538-1.522 2.8-2.776 2.803-2.785.005-.012-3.617-3.684-6.107-6.193L17.65 4.6l-.505.505c-.279.278-.517.501-.53.497-.013-.005-1.27-1.267-2.793-2.805A449.655 449.655 0 0011.041 0zM9.223 7.367c.091.038 7.951 4.608 7.957 4.627.003.013-1.781 1.056-3.965 2.32a999.898 999.898 0 01-3.996 2.307c-.019.006-.026-1.266-.026-4.629 0-3.7.007-4.634.03-4.625Z"/>
+-</svg>
+diff --git a/resources/icons/hicolor/64x64/apps/io.github.screwys.Rufin.source.plex.png b/resources/icons/hicolor/64x64/apps/io.github.screwys.Rufin.source.plex.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..e3e325c777adc6180a71d23712472e7f23e3c4c9
+GIT binary patch
+literal 1840
+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
+
+literal 0
+HcmV?d00001
+
+diff --git a/resources/icons/hicolor/64x64/apps/io.github.screwys.Rufin.source.plex.svg b/resources/icons/hicolor/64x64/apps/io.github.screwys.Rufin.source.plex.svg
+deleted file mode 100644
+index ae11a6a9..00000000
+--- a/resources/icons/hicolor/64x64/apps/io.github.screwys.Rufin.source.plex.svg
++++ /dev/null
+@@ -1,4 +0,0 @@
+-<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+-  <rect width="64" height="64" rx="14" fill="#282828"/>
+-  <path d="M20 12h13l15 20-15 20H20l15-20z" fill="#e5a00d"/>
+-</svg>
